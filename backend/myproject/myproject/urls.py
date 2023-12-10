@@ -19,5 +19,5 @@ from myapp.views import multiply
 
 
 urlpatterns = [
-    path('api/multiply/<str:n>', multiply, name='multiply'),
+    path('api/multiply/<int:n>', multiply, name='multiply'),
 ]
