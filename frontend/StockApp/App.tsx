@@ -53,7 +53,7 @@ interface ApiResponse {
 
 function App() {
   const [inputValue, setInputValue] = useState<string>('');
-  const [result, setResult] = useState<number | null>(null);
+  const [result, setResult] = useState<any | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -64,6 +64,7 @@ function App() {
     try {
       const response = await axios.get<ApiResponse>(`http://127.0.0.1:8000/api/multiply/${inputValue}`);
       const resultValue = response.data.result;
+      console.log(resultValue)
       setResult(resultValue);
       setError(null);
     } catch (error) {
@@ -80,7 +81,12 @@ function App() {
         <input type="number" value={inputValue} onChange={handleInputChange} />
       </label>
       <button onClick={fetchData}>Multiply by 10</button>
-      {result !== null && <p>Result: {result}</p>}
+      {result !== null && 
+      <table> <tbody>
+         <td>{result.results[0].T}</td> :
+        <td>{result.results[0].c}</td>
+      </tbody> </table>
+      }
       {error && <p>{error}</p>}
     </div>
   );
