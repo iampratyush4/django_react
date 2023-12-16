@@ -83,8 +83,8 @@ function App() {
       <button onClick={fetchData}>Multiply by 10</button>
       {result !== null && 
       <table> <tbody>
-         <td>{result.results[0].T}</td> :
-        <td>{result.results[0].c}</td>
+         {/* <td>{result.results[0]}</td> : */}
+        <td>{result.results[0].AAEEF}</td>
       </tbody> </table>
       }
       {error && <p>{error}</p>}
