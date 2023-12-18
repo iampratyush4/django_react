@@ -43,7 +43,7 @@ def multiply(request, n):
 
         # Get active tickers
         active_tickers = get_active_tickers(api_key)
-
+  
         # Select a random subset of tickers
         if active_tickers:
             selected_tickers = random.sample(active_tickers, min(n, len(active_tickers)))

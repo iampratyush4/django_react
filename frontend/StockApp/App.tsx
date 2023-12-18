@@ -48,7 +48,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 interface ApiResponse {
-  result: number;
+  result: any;
 }
 
 function App() {
@@ -66,6 +66,7 @@ function App() {
       const resultValue = response.data.result;
       console.log(resultValue)
       setResult(resultValue);
+      console.log( resultValue[0] ,"here")
       setError(null);
     } catch (error) {
       setError('An error occurred. Please try again.');
@@ -81,11 +82,15 @@ function App() {
         <input type="number" value={inputValue} onChange={handleInputChange} />
       </label>
       <button onClick={fetchData}>Multiply by 10</button>
-      {result !== null && 
-      <table> <tbody>
-         {/* <td>{result.results[0]}</td> : */}
-        <td>{result.results[0].AAEEF}</td>
-      </tbody> </table>
+    
+      {
+      result !== null && 
+      <table> 
+        <tbody>
+     
+        <td>{result}</td>
+      </tbody> 
+      </table>
       }
       {error && <p>{error}</p>}
     </div>
