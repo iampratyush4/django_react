@@ -69,7 +69,7 @@ function App() {
       console.log( resultValue[0] ,"here")
       setError(null);
     } catch (error) {
-      setError('An error occurred. Please try again.');
+      setError('An error occurred. Please try again...');
       setResult(null);
     }
   };
@@ -81,7 +81,7 @@ function App() {
         Enter a number:
         <input type="number" value={inputValue} onChange={handleInputChange} />
       </label>
-      <button onClick={fetchData}>Multiply by 10</button>
+      <button onClick={fetchData}>Multiply by 10.</button>
     
       {
       result !== null && 
