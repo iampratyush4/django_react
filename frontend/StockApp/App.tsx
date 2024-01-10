@@ -69,7 +69,7 @@ function App() {
       console.log( resultValue[0] ,"here")
       setError(null);
     } catch (error) {
-      setError('An error occurred. Please try again...');
+      setError('An error occurred. Please try again....');
       setResult(null);
     }
   };
